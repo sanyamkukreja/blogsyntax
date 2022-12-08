@@ -3,15 +3,15 @@
 {% block blogactive %} active {% endblock blogactive %}
 {% block body %}
 <div class="container">
-    <h1>popular blogposts:</h1>
-    {% for post in allposts %}
-    <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary">World</strong>
-        <h3 class="mb-0">{{post.title}}</h3>
-        <div class="mb-1 text-muted">Nov 12</div>
-        <p class="card-text mb-auto">{{post.content|truncatechars:100}}</p>
-        <a href="/blog/{{Post.slug}}" class="stretched-link">Continue reading</a>
-      </div>
-      {% endfor %}
-    </div>
+  <h1>popular blogposts:</h1>
+  {% for post in allposts %}
+  <div class="col p-4 d-flex flex-column position-static">
+    <strong class="d-inline-block mb-2 text-primary">World</strong>
+    <h3 class="mb-0">{{post.title}}</h3>
+    <div class="mb-1 text-muted">Nov 12</div>
+    <p class="card-text mb-auto">{{post.content|truncatechars:100}}</p>
+    <a href="/blog/{{Post.slug}}">Continue reading</a>
+  </div>
+  {% endfor %}
+</div>
 {% endblock body %}

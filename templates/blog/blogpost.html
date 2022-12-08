@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}blogpost{% endblock title %}
+{% block blogactive %} active {% endblock blogactive %}
 
 {% block body %}
+<article class="blog-post">
+    <h2 class="blog-post-title mb-1">{{post.title}}</h2>
+    <p class="blog-post-meta">January 1, 2021 by <a href="/about00000">{{post.author}}</a></p>
 
+    
+       
+    <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+  </article>
 {% endblock body %}

@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
-{% block title %}bloghome{% endblock title %}
+{% block title %}search results{% endblock title %}
 {% block blogactive %} active {% endblock blogactive %}
 {% block body %}
 <div class="container">
-    <h1>popular blogposts:</h1>
+    <h1>search results:</h1>
+    {% if allposts|length < 1 %}
+    <p> no search results </p>
+    <h1>your search query:-{{query}}did not match</h1>
+    {% endif %}
     {% for post in allposts %}
     <div class="col p-4 d-flex flex-column position-static">
         <strong class="d-inline-block mb-2 text-primary">World</strong>
@@ -13,5 +17,5 @@
         <a href="/blog/{{Post.slug}}" class="stretched-link">Continue reading</a>
       </div>
       {% endfor %}
-    </div>
+</div>
 {% endblock body %}
